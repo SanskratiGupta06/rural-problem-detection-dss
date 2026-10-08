@@ -10,15 +10,6 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-/**
- * REST API for the Rural Problem Detection and Decision Support System.
- * Uses only the JDK (com.sun.net.httpserver), so there is nothing to install.
- *
- *   GET /api/health
- *   GET /api/categories
- *   GET /api/classify?text=...
- *   GET /api/priority?water=70&road=45&complaints=water:4,road:3
- */
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -76,7 +67,6 @@ public class Main {
         send(ex, 200, "{\"score\":" + score + ",\"label\":" + q(Scoring.label(score)) + "}");
     }
 
-    // ---- helpers ----
     private static Map<String, String> params(HttpExchange ex) {
         Map<String, String> m = new HashMap<>();
         String qs = ex.getRequestURI().getRawQuery();

@@ -3,7 +3,6 @@ package dss;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/** One problem category: key, name, weight in the village score, keyword pattern and suggested scheme. */
 public record Category(String key, String name, double weight, Pattern keywords, String suggestion) {
 
     private static final int F = Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;

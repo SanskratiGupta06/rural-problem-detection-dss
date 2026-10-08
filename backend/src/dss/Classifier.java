@@ -3,7 +3,6 @@ package dss;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/** Rule-based complaint classifier: picks a category and a 1-5 severity from free text (Hindi or English). */
 public final class Classifier {
 
     private static final int F = Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
@@ -22,7 +21,7 @@ public final class Classifier {
             Matcher m = c.keywords().matcher(text);
             int n = 0;
             while (m.find()) n++;
-            if (n > bestCount) { bestCount = n; best = c; }   // ties go to the first category
+            if (n > bestCount) { bestCount = n; best = c; }  
         }
         int sev = 2;
         if (DURATION.matcher(text).find()) sev++;
