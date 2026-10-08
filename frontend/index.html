@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rural Problem Detection and Decision Support System</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="pg"></div>
+<div class="nav"><div class="bar"><div id="nav"></div><div class="rt"><button class="lt" id="lt" data-l="en" role="switch" aria-checked="false" aria-label="Language"><span class="th2"></span><span>EN</span><span>हिं</span></button><button id="th" aria-label="Toggle theme">🌓</button></div></div></div>
+
+<header class="hero" id="home">
+<span class="chip" style="right:6%;top:150px">📍 5 villages mapped</span><span class="chip" style="right:18%;top:270px;animation-delay:-2s">🎤 Hindi voice complaints</span><span class="chip" style="left:3%;top:400px;animation-delay:-3.5s">📊 Priority score 0–100</span>
+<div class="w"><span class="live"><i></i> VIT Bhopal · EPICS · DSN3099</span>
+<h1>Finding rural problems early.<br>Fix first: <span id="word">Water</span></h1>
+<p class="s">A decision support platform that collects village-level data, detects problems with AI, ranks nearby villages on a GIS map and sends evidence-backed priorities to the Panchayat.</p>
+<div class="cta"><a class="btn" href="#demo">Try the live demo</a> &nbsp;<a class="btn o" href="#explorer">Explore the map</a></div></div>
+<svg id="scene" viewBox="0 0 800 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a" stop-opacity="0"/><stop offset="1" stop-color="#ffd98a" stop-opacity=".25"/></linearGradient></defs>
+<rect width="800" height="300" fill="url(#sk)"/>
+<g transform="translate(660 70)"><circle r="30" fill="#f6c453"/><g stroke="#f6c453" stroke-width="3" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/><path d="M0-42v-12M0 42v12M-42 0h-12M42 0h12M30-30l8-8M-30 30l-8 8M30 30l8 8M-30-30l-8-8"/></g></g>
+<g fill="#fff" opacity=".9"><g><animateTransform attributeName="transform" type="translate" from="-100 0" to="900 0" dur="60s" repeatCount="indefinite"/><ellipse cx="100" cy="60" rx="38" ry="12"/><ellipse cx="125" cy="52" rx="26" ry="12"/></g><g><animateTransform attributeName="transform" type="translate" from="-400 0" to="600 0" dur="80s" repeatCount="indefinite"/><ellipse cx="500" cy="100" rx="42" ry="13"/><ellipse cx="525" cy="92" rx="28" ry="12"/></g></g>
+<path d="M0 200 Q120 140 260 190 T520 175 T800 190 V300 H0Z" fill="#8fcf86" opacity=".85"/><path d="M0 230 Q150 190 300 225 T600 215 T800 225 V300 H0Z" fill="#3f9e5a"/>
+<g transform="translate(120 210)"><rect width="40" height="30" fill="#fff4d6"/><polygon points="-6,0 20,-22 46,0" fill="#c2410c"/><rect x="16" y="12" width="9" height="18" fill="#7a4a2a"/></g>
+<g transform="translate(190 218)"><rect width="34" height="26" fill="#ffe9b8"/><polygon points="-5,0 17,-18 39,0" fill="#b45309"/><rect x="12" y="10" width="8" height="16" fill="#7a4a2a"/></g>
+<g transform="translate(540 205)"><rect width="46" height="34" fill="#fff4d6"/><polygon points="-6,0 23,-24 52,0" fill="#c2410c"/><rect x="19" y="14" width="9" height="20" fill="#7a4a2a"/></g>
+<g transform="translate(610 214)"><rect width="36" height="28" fill="#ffe9b8"/><polygon points="-5,0 18,-19 41,0" fill="#b45309"/></g>
+<g fill="#2f9e5f"><circle cx="90" cy="222" r="16"/><circle cx="305" cy="228" r="14"/><circle cx="460" cy="220" r="17"/><circle cx="700" cy="222" r="15"/></g><g fill="#6b4a2a"><rect x="88" y="232" width="4" height="12"/><rect x="303" y="238" width="4" height="10"/><rect x="458" y="232" width="4" height="12"/><rect x="698" y="233" width="4" height="11"/></g>
+<g transform="translate(375 150)"><rect x="8" y="30" width="6" height="40" fill="#7a8a80"/><rect x="-6" y="0" width="34" height="30" rx="6" fill="#1d6fa5"/><path d="M-6 30h34" stroke="#fff" opacity=".5"/></g>
+<path d="M0 270 Q200 250 400 262 T800 255 V300 H0Z" fill="#b9a57a"/><path d="M0 276 Q200 258 400 268 T800 262" stroke="#fff" stroke-width="2" stroke-dasharray="12 10" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-44" dur="2s" repeatCount="indefinite"/></path>
+<g stroke="#0a5c44" stroke-width="2" fill="none" stroke-linecap="round"><path d="M0 0q5-7 10 0q5-7 10 0"><animateTransform attributeName="transform" type="translate" values="-40 60;860 20" dur="26s" repeatCount="indefinite"/></path><path d="M0 0q5-7 10 0q5-7 10 0"><animateTransform attributeName="transform" type="translate" values="-90 90;860 50" dur="32s" repeatCount="indefinite"/></path></g></svg>
+</header>
+
+<div class="strip"><div class="w" id="strip"></div></div>
+<div class="mq"><div id="mq"></div></div>
+
+<section id="problem"><div class="w rv"><span class="tag">The problem</span><h2>Villages have problems. Decisions lack evidence.</h2><p class="lead">Problems are scattered across paper registers and phone calls. Nobody can see which village needs what first.</p><div class="grid" id="prob"></div></div></section>
+
+<section class="alt" id="how"><div class="w rv"><span class="tag">How it works</span><h2>From field visit to Panchayat action</h2><p class="lead">A complete pipeline built on problems discovered in real nearby villages.</p><div class="pipe" id="pipe"></div></div></section>
+
+<section id="ai"><div class="w rv"><span class="tag">Intelligence</span><h2>AI that understands photos and Hindi</h2><p class="lead">Three modules turn raw reports into a priority list.</p>
+<div class="grid g2">
+<div class="card h"><h3>📷 Computer vision <span class="pill" style="background:var(--o)">Planned</span></h3><svg viewBox="0 0 360 200" width="100%" role="img" aria-label="Illustration of road photo with pothole detection"><rect width="360" height="200" rx="12" fill="#8cc7da"/><rect y="90" width="360" height="110" fill="#6bbf7a"/><polygon points="130,90 230,90 330,200 30,200" fill="#555"/><path d="M180 92L180 200" stroke="#fff" stroke-width="4" stroke-dasharray="14 12"/><ellipse cx="190" cy="160" rx="32" ry="11" fill="#2b2b2b"/><rect x="140" y="138" width="100" height="46" fill="none" stroke="#c2410c" stroke-width="3" stroke-dasharray="8 5"><animate attributeName="stroke-dashoffset" from="0" to="-26" dur="1.2s" repeatCount="indefinite"/></rect><rect x="140" y="118" width="124" height="20" fill="#c2410c"/><text x="146" y="132" style="fill:#fff;font-weight:700;font-size:12px">Pothole · HIGH</text><rect x="0" y="0" width="360" height="4" fill="#fff" opacity=".5"><animate attributeName="y" values="0;196;0" dur="4s" repeatCount="indefinite"/></rect></svg>
+<p class="mu">Illustration of the planned output: detect potholes, garbage and waterlogging in field photos and rate severity. Model training is Phase II.</p><div class="tg"><span>YOLO</span><span>OpenCV</span><span>Python</span></div></div>
+<div class="card h"><h3>🎤 Hindi voice complaints <span class="pill" style="background:var(--g)">Working</span></h3><div class="bars" id="wave"></div><p style="font-size:17px;margin:8px 0">“हमारे गाँव में तीन दिन से नल में पानी नहीं आ रहा”</p><div class="tg" id="vchips"></div>
+<p class="mu">Speech to text in the browser, then a keyword classifier detects category and severity (computed live from the sentence above).</p></div>
+<div class="card h"><h3>📊 Village priority score <span class="pill" style="background:var(--g)">Working</span></h3><svg viewBox="0 0 220 130" width="100%" id="gauge" role="img" aria-label="Average priority gauge"></svg><p class="mu">Weighted by category, built from field-survey severity (70%) and open complaints (30%). Higher means more serious.</p></div>
+<div class="card h"><h3>🗺️ GIS village comparison <span class="pill" style="background:var(--g)">Working</span></h3><div id="mini"></div><p class="mu">Nearby villages ranked side by side, so limited resources go where the need is greatest.</p></div>
+</div></div></section>
+
+<section class="alt" id="explorer"><div class="w rv"><span class="tag">GIS</span><h2>Village explorer</h2><p class="lead">Tap a village. Colour shows priority, the number shows open complaints, and the radar chart shows what is wrong.</p>
+<div class="grid g2"><div class="card"><svg id="map" viewBox="0 0 420 340" width="100%" role="img" aria-label="Village map"></svg>
+<div class="lg"><span><i style="background:var(--r)"></i>Critical</span><span><i style="background:var(--o)"></i>High</span><span><i style="background:var(--y)"></i>Moderate</span><span><i style="background:var(--g)"></i>Low</span><span><i style="background:var(--b)"></i>Water body (illustrative)</span><span>● small dot = open complaint</span></div>
+<p class="mu">Schematic map. Distances are real aerial distances from Nipaniya Kalan, not to scale.</p></div>
+<div class="card"><h3 id="mt">Select a village</h3><div id="mi" class="mu">Tap a village on the map.</div><svg id="radar" viewBox="0 0 240 230" width="100%" aria-label="Radar chart"></svg><div id="mrec"></div></div></div></div></section>
+
+<section id="demo"><div class="w rv"><span class="tag">Live demo</span><h2>Use it right here</h2><p class="lead">Everything below works. Enter a survey, report a problem by voice or text, and watch scores and the map update.</p>
+<div class="note" id="demonote"></div>
+<div class="tabs" id="tabs"></div>
+<div class="tp" id="t-rank"><div id="rank"></div></div>
+<div class="tp" id="t-survey"><div class="card"><div class="row"><div><label>Village</label><select id="sv"></select></div><div><label>Surveyor</label><input id="sn"></div></div><p class="mu">Rate each problem 0 (none) to 100 (very severe).</p><div id="sf"></div><div class="row"><div><label>Notes</label><textarea id="snote" rows="2"></textarea></div><div><label>Location</label><input id="sgps" placeholder="lat, lng"><button class="btn s o" id="gps" style="margin-top:6px;color:var(--ac)">📍 Use my GPS</button></div></div><button class="btn" id="ssave" style="margin-top:12px">Save survey</button><div class="ok" id="sok"></div></div><div class="card"><h3>Saved surveys</h3><div class="scroll" id="slist"></div></div></div>
+<div class="tp" id="t-report"><div class="card"><div class="row"><div><label>Village *</label><select id="rv"></select></div><div><label>Your name (optional)</label><input id="rn"></div></div><label>Describe the problem (Hindi or English)</label><textarea id="rt" rows="3" placeholder="हमारे गाँव में तीन दिन से नल में पानी नहीं आ रहा"></textarea>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><button class="btn s mic" id="mic">🎤 Speak in Hindi</button><button class="btn s o" id="cls" style="color:var(--ac)">Detect category &amp; severity</button><span class="mu" id="micmsg"></span></div>
+<div class="row"><div><label>Category (editable)</label><select id="rc"></select></div><div><label>Severity 1–5 (editable)</label><select id="rs"></select></div></div><div class="note" id="clsnote">Suggested by a keyword-based classifier. Please check before submitting.</div>
+<div class="row"><div><label>Location / landmark</label><input id="rl"><button class="btn s o" id="rgps" style="margin-top:6px;color:var(--ac)">📍 Tag my GPS</button></div><div><label>Photo (optional)</label><input type="file" id="rf" accept="image/*" capture="environment"></div></div><button class="btn" id="rsub" style="margin-top:12px">Submit complaint</button><div class="ok" id="rok"></div></div></div>
+<div class="tp" id="t-track"><div class="card"><label style="margin-top:0"><input type="checkbox" id="adm"> Panchayat / Admin mode (move complaints to the next stage)</label></div><div class="kb" id="kb"></div></div>
+<div style="margin-top:12px"><button class="btn s o" id="reset" style="color:var(--ac)">Reload sample data</button> <button class="btn s o" id="clear" style="color:var(--ac)">Clear all data</button></div></div></section>
+
+<section class="alt" id="arch"><div class="w rv"><span class="tag">Engineering</span><h2>Architecture &amp; tech stack</h2><p class="lead">Layered design that moves from a browser prototype to a full backend in Phase II.</p><div id="archd"></div></div></section>
+<div class="mq"><div id="mq2"></div></div>
+
+<section id="road"><div class="w rv"><span class="tag">Roadmap</span><h2>Project timeline</h2><div class="tl" id="tl"></div></div></section>
+
+<section class="alt" id="team"><div class="w rv"><span class="tag">Team &amp; impact</span><h2>Six roles, one goal</h2><p class="lead">A student team building technology for the community.</p><div class="grid" id="tm"></div>
+<h2 style="margin-top:36px;font-size:24px">Feasibility</h2><div class="grid" id="fe"></div></div></section>
+
+<section><div class="w rv"><div class="cta2"><h2>Technology for the last mile</h2><p style="opacity:.9;max-width:560px;margin:0 auto 20px">Built at VIT Bhopal for the Engineering Projects in Community Service course.</p><a class="btn" href="#demo">Open the live demo</a></div></div></section>
+<footer>Rural Problem Detection and Decision Support System · DSN3099 · VIT Bhopal<br>Built by Sanskrati Gupta and team · Sample data is marked DEMO</footer>
+
+<script src="js/app.js"></script>
+</body></html>
